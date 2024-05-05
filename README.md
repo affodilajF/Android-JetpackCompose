@@ -16,6 +16,9 @@ Everytime the state is changes, compose will recomposing it.
 - mutableStateOf() is an function that returns an mutable state object, the mutable state holds the value based on its param, it can be integer, string, etc. 
 
 - "Remember" keyword => to save AN SINGLE OBJECT to a memory at it initial composition, and will be redrawn when recomposition happening.
+- Intinya, remember adalah sebuah kata kunci yang digunakan untuk menyimpan dan mengingat objek tunggal di dalam memori selama masa hidup sebuah komponen. Ketika komponen tersebut pertama kali dirender (pada inisialisasi), objek tersebut disimpan di dalam memori. Selama masa hidup komponen, objek tersebut akan tetap ada dan nilainya akan dipertahankan, bahkan ketika komponen direcompose (misalnya, ketika terjadi perubahan pada state).
+
+- Ketika recomposition terjadi, komponen tidak dihapus dan dibuat ulang dari awal. Sebaliknya, Compose akan memeriksa perubahan pada state dan merender kembali komponen sesuai kebutuhan. Ketika itu terjadi, nilai dari objek yang disimpan dengan remember akan tetap dipertahankan, sehingga memastikan bahwa nilai tersebut akan tetap konsisten dan tidak direset ke nilai awal.
   ```kotlin
   val count = remember { mutableStateOf(0) }
   ```
